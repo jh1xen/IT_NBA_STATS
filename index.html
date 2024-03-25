@@ -1,0 +1,48 @@
+<!DOCTYPE html>
+<html>
+<head>
+    <link rel="stylesheet" href="https://unpkg.com/@picocss/pico@latest/css/pico.min.css">
+    <title>NBA Team / Player Stats</title>
+</head>
+<body>
+    <h1>원하는 팀을 선택하세요</h1>
+    <form action="/result" method="POST">
+        <label for="team">Team:</label>
+        <select id="team" name="team">
+            <option value="none">---team---</option>
+            <option value="MIL">MILWAUKEE BUCKS</option>
+            <option value="BOS">BOSTON CELTICS</option>
+            <option value="PHI">PHILADELPHIA 76ERS</option>
+            <option value="DEN">DENVER NUGGETS</option>
+            <option value="CLE">CLEVELAND CAVALIERS</option>
+            <option value="MEM">MEMPHIS GRIZZLIES</option>
+            <option value="SAC">SACRAMENTO KINGS</option>
+            <option value="NYK">NEW YORK KNICKS</option>
+            <option value="BKN">BROOKLYN NETS</option>
+            <option value="PHX">PHOENIX SUNS</option>
+            <option value="GSW">GOLDEN STATE WARRIORS</option>
+            <option value="LAC">LA CLIPPERS</option>
+            <option value="MIA">MIAMI HEAT</option>
+            <option value="LAL">LOS ANGELES LAKERS</option>
+            <option value="MIN">MINNESOTA TIMBERWOLVES</option>
+            <option value="NOP">NEW ORLEANS PELICANS</option>
+            <option value="ATL">ATLANTA HAWKS</option>
+            <option value="TOR">TORONTO RAPTORS</option>
+            <option value="CHI">CHICAGO BULLS</option>
+            <option value="OKC">OKLAHOMA CITY THUNDER</option>
+            <option value="DAL">DALLAS MAVERICKS</option>
+            <option value="UTA">UTAH JAZZ</option>
+            <option value="IND">INDIANA PACERS</option>
+            <option value="WAS">WASHINGTON WIZARDS</option>
+            <option value="ORL">ORLANDO MAGIC</option>
+            <option value="POR">PORTLAND TRAIL BLAZERS</option>
+            <option value="CHA">CHARLOTTE HORNETS</option>
+            <option value="HOU">HOUSTON ROCKETS</option>
+            <option value="SAS">SAN ANTONIO SPURS</option>
+            <option value="DET">DETROIT PISTONS</option>
+        </select>
+        <br>
+        <input type="submit" value="Submit">
+    </form>
+</body>
+</html>

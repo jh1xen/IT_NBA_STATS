@@ -1,0 +1,64 @@
+<!DOCTYPE html>
+<html>
+<head>
+    <link rel="stylesheet" href="https://unpkg.com/@picocss/pico@latest/css/pico.min.css">
+    <title>Result</title>
+</head>
+<body>
+    <h1><h2>팀의 스탯입니다</h2>
+        <table>
+            <tr>
+                <th>Team Name</th>
+                <th>PTS</th>
+                <th>REB</th>
+                <th>AST</th>
+                <th>GP</th>
+                <th>FG%</th>
+                <th>3P%</th>
+                <th>FT%</th>
+                <th>TOV</th>
+                <th>STL</th>
+                <th>BLK</th>
+                <th>PF</th>
+            </tr>
+            {% for index, row in team.iterrows() %}
+                <tr>
+                    <td>{{ row['TEAM_NAME'] }}</td>
+                    <td>{{ row['PTS'] }}</td>
+                    <td>{{ row['REB'] }}</td>
+                    <td>{{ row['AST'] }}</td>
+                    <td>{{ row['GP'] }}</td>
+                    <td>{{ row['FG%'] }}</td>
+                    <td>{{ row['3P%'] }}</td>
+                    <td>{{ row['FT%'] }}</td>
+                    <td>{{ row['TOV'] }}</td>
+                    <td>{{ row['STL'] }}</td>
+                    <td>{{ row['BLK'] }}</td>
+                    <td>{{ row['PF'] }}</td>
+                </tr>
+            {% endfor %}
+        </table></h1>
+    <ul>
+        {% for stat in stats %}
+            <li>{{ stat }}</li>
+        {% endfor %}
+    </ul>
+    <h2>추천 선수는 다음과 같습니다.</h2>
+    <table>
+        <tr>
+            <th>Rank</th>
+            <th>Name</th>
+            <th>Team</th>
+            <th>Max Stat</th>
+        </tr>
+        {% for index, row in result_data.iterrows() %}
+            <tr>
+                <td>{{ index }}</td>
+                <td>{{ row['NAME'] }}</td>
+                <td>{{ row['TEAM'] }}</td>
+                <td>{{ row['max_stats'] }}</td>
+            </tr>
+        {% endfor %}
+    </table>
+</body>
+</html>

@@ -1,0 +1,58 @@
+<!DOCTYPE html>
+<html>
+<head>
+    <link rel="stylesheet" href="https://unpkg.com/@picocss/pico@latest/css/pico.min.css">
+    <title>Result</title>
+</head>
+<body>
+    <h1>팀의 스탯입니다</h1>
+    <table>
+        <tr>
+            <th>Team Name</th>
+            <th>PTS</th>
+            <th>REB</th>
+            <th>AST</th>
+            <th>GP</th>
+            <th>FG%</th>
+            <th>3P%</th>
+            <th>FT%</th>
+            <th>TOV</th>
+            <th>STL</th>
+            <th>BLK</th>
+            <th>PF</th>
+        </tr>
+        {% for index, row in team.iterrows() %}
+            <tr>
+                <td>{{ row['TEAM_NAME'] }}</td>
+                <td>{{ row['PTS'] }}</td>
+                <td>{{ row['REB'] }}</td>
+                <td>{{ row['AST'] }}</td>
+                <td>{{ row['GP'] }}</td>
+                <td>{{ row['FG%'] }}</td>
+                <td>{{ row['3P%'] }}</td>
+                <td>{{ row['FT%'] }}</td>
+                <td>{{ row['TOV'] }}</td>
+                <td>{{ row['STL'] }}</td>
+                <td>{{ row['BLK'] }}</td>
+                <td>{{ row['PF'] }}</td>
+            </tr>
+        {% endfor %}
+    </table>
+    <form action="/result2" method="POST">
+        <label for="stats">보고 싶은 스탯을 골라주세요(중복 가능)</label>
+        <input type="checkbox" id="stats" name="stats" value="PTS">PTS
+        <input type="checkbox" id="stats" name="stats" value="REB">REB
+        <input type="checkbox" id="stats" name="stats" value="AST">AST
+        <input type="checkbox" id="stats" name="stats" value="GP">GP
+        <input type="checkbox" id="stats" name="stats" value="FG%">FG%
+        <input type="checkbox" id="stats" name="stats" value="3P%">3P%
+        <input type="checkbox" id="stats" name="stats" value="FT%">FT%
+        <input type="checkbox" id="stats" name="stats" value="TOV">TOV
+        <input type="checkbox" id="stats" name="stats" value="STL">STL
+        <input type="checkbox" id="stats" name="stats" value="BLK">BLK
+        <input type="checkbox" id="stats" name="stats" value="PF">PF
+        <br><br><br><br>
+        <input type="submit" value="Submit">
+    </form>
+</body>
+</html>
